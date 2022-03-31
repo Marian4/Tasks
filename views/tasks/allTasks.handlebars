@@ -1,0 +1,40 @@
+<h1>Your Tasks</h1>
+{{#each tasks}}
+{{#if this.done}}
+<div class="task" id="done">
+<h3>{{this.name}}</h3>
+<div class="actions">
+    <form action="tasks/view/{{this.id}}" method="get">
+        <button type="submit"><i class="bi bi-eye"></i></button>
+    </form>
+    <form action="tasks/edit/{{this.id}}" method="get">
+        <button type="submit"><i class="bi bi-pencil-square"></i></button>
+    </form>
+    <form action="tasks/delete/{{this.id}}" method="post">
+        <button type="submit"><i class="bi bi-trash-fill"></i></button>
+    </form>
+    <form action="tasks/toggleStatus/{{this.id}}" method="post">
+        <button type="submit"><i class="bi bi-check2"></i></button>
+    </form>
+</div>
+</div>
+{{else}}
+<div class="task">
+<h3>{{this.name}}</h3>
+<div class="actions">
+    <form action="tasks/view/{{this.id}}" method="get">
+        <button type="submit"><i class="bi bi-eye"></i></button>
+    </form>
+    <form action="tasks/edit/{{this.id}}" method="get">
+        <button type="submit"><i class="bi bi-pencil-square"></i></button>
+    </form>
+    <form action="tasks/delete/{{this.id}}" method="post">
+        <button type="submit"><i class="bi bi-trash-fill"></i></button>
+    </form>
+    <form action="tasks/toggleStatus/{{this.id}}" method="post">
+        <button type="submit"><i class="bi bi-check2"></i></button>
+    </form>
+</div>
+</div>
+{{/if}}
+{{/each}}
